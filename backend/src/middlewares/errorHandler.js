@@ -42,10 +42,10 @@ function notFoundHandler(req, res) {
     error: 'Not Found',
     message: `Cannot ${req.method} ${req.url}`,
     availableEndpoints: {
-      generate: 'POST/api/generate',
-      documents: 'GET/api/documents',
-      stats: 'GET/api/stats',
-      health: 'GET/api/health',
+      generate: 'POST /api/generate',
+      documents: 'GET /api/documents',
+      stats: 'GET /api/stats',
+      health: 'GET /api/health',
     },
   });
 }

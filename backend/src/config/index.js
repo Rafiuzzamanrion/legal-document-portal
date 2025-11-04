@@ -1,3 +1,4 @@
+require ('dotenv').config();
 const config = {
   server: {
     port: process.env.PORT || 5000,
@@ -16,7 +17,7 @@ const config = {
   search: {
     minQueryLength: 1,
     maxQueryLength: 500,
-    simulatedDelay: 800,
+    simulatedDelay: 500,
   },
 
   logging: {
