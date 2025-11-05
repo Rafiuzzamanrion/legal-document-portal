@@ -25,15 +25,3 @@ export const getRelevanceBadgeColor = (score: number): string => {
   if (percentage >= 40) return 'bg-yellow-100 text-yellow-800';
   return 'bg-gray-100 text-gray-800';
 };
-
-export const debounce = <T extends (...args: any[]) => any>(
-  func: T,
-  delay: number
-): ((...args: Parameters<T>) => void) => {
-  let timeoutId: NodeJS.Timeout;
-
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func(...args), delay);
-  };
-};

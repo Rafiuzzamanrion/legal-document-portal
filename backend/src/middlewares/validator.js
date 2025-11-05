@@ -3,7 +3,7 @@ const config = require('../config');
 const logger = require('../utils/logger');
 
 function validateSearchQuery(req, res, next) {
-  const { query } = req.body;
+  const { query } = req.query;
 
   if (!query) {
     logger.warn('Validation failed: Query is missing');
@@ -41,8 +41,7 @@ function validateSearchQuery(req, res, next) {
     });
   }
 
-  req.body.query = query.trim();
-
+  req.query.query = query.trim();
   next();
 }
 

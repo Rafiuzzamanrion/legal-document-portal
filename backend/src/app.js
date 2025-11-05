@@ -20,12 +20,8 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Legal Document Search API',
     version: '1.0.0',
-    documentation: '/api/docs',
     endpoints: {
-      generate: 'POST /api/generate',
-      documents: 'GET /api/documents',
-      stats: 'GET /api/stats',
-      health: 'GET /api/health',
+      generate: 'GET /api/generate',
     },
   });
 });

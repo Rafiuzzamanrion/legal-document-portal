@@ -3,6 +3,6 @@ const router = express.Router();
 const documentController = require('../controllers/documentController');
 const { validateSearchQuery } = require('../middlewares/validator');
 
-router.post('/generate', validateSearchQuery, documentController.generate);
+router.get('/generate', validateSearchQuery, documentController.generate);
 
 module.exports = router;

@@ -6,7 +6,7 @@ const config = require('../config');
 
 async function generate(req, res, next) {
   try {
-    const { query } = req.body;
+    const { query } = req.query;
     logger.info(`Generate request received: "${query}"`);
     await new Promise(resolve =>
       setTimeout(resolve, config.search.simulatedDelay)
@@ -33,50 +33,6 @@ async function generate(req, res, next) {
   }
 }
 
-async function getDocuments(req, res, next) {
-  try {
-    const documents = getAllDocuments();
-
-    res.json({
-      success: true,
-      data: documents,
-      count: documents.length,
-    });
-  } catch (error) {
-    next(error);
-  }
-}
-
-async function getStats(req, res, next) {
-  try {
-    const stats = getDocumentStats();
-
-    res.json({
-      success: true,
-      data: stats,
-    });
-  } catch (error) {
-    next(error);
-  }
-}
-
-function health(req, res) {
-  const stats = getDocumentStats();
-
-  res.json({
-    status: 'ok',
-    message: 'Legal Document API is running',
-    version: '1.0.0',
-    environment: config.server.env,
-    documentsLoaded: stats.total,
-    uptime: process.uptime(),
-    timestamp: new Date().toISOString(),
-  });
-}
-
 module.exports = {
   generate,
-  getAllDocuments: getDocuments,
-  getStats,
-  health,
 };

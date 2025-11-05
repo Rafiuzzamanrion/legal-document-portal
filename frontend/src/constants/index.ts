@@ -3,9 +3,6 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost
 
 export const API_ENDPOINTS = {
   GENERATE: '/api/generate',
-  DOCUMENTS: '/api/documents',
-  STATS: '/api/stats',
-  HEALTH: '/api/health',
 } as const;
 
 export const SEARCH_SUGGESTIONS = [
