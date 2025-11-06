@@ -10,9 +10,9 @@
 
 ## 🌐 Live Demo
 
-**Frontend:** https://legal-document-portal-s67w.vercel.app/ 
+**Frontend:** https://legal-document-portal-s67w.vercel.app/
 **Backend API:** https://legal-document-portal.vercel.app/
-**GitHub:** https://github.com/Rafiuzzamanrion/legal-document-portal
+**GitHub:** https://github.com/Rafiuzzamanrion/legal-document-portal.git
 
 ---
 
@@ -147,12 +147,6 @@ Search legal documents
 }
 ```
 
-### GET /api/documents
-Get all 3 hardcoded documents
-
----
-
-
 ### Routes
 **File:** `backend/src/routes/api.js`
 
@@ -161,7 +155,6 @@ const router = express.Router();
 
 // Map endpoints to controllers
 router.post('/generate', validateSearchQuery, documentController.generate);
-router.get('/documents', documentController.getAllDocuments);
 ```
 
 ---
@@ -271,4 +264,5 @@ http://localhost:5000      # Backend
 **Built with MVC Architecture + React Components** 🏗️  
 **Ready for Production** ✅  
 **Deployed on Vercel** 🚀
+
 
