@@ -124,6 +124,41 @@ npm run dev                    # Port 3000
 
 ---
 
+## 🔧 Environment Variables
+
+### Backend Configuration
+
+Create `backend/.env` file:
+
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# CORS Configuration
+CORS_ORIGIN=http://localhost:3000
+
+# Logging
+LOG_LEVEL=info
+
+# Search Configuration
+SEARCH_SIMULATED_DELAY=700
+```
+
+### Frontend Configuration
+
+Create `frontend/.env` file:
+
+```env
+# API Configuration
+NEXT_PUBLIC_API_URL=http://localhost:5000
+
+# Environment
+NODE_ENV=development
+```
+
+**Note:** These files are automatically created when using the run scripts (`start.sh` or `start.bat`).
+```
 ## 📡 API Endpoints
 
 ### GET /api/generate
@@ -264,5 +299,6 @@ http://localhost:5000      # Backend
 **Built with MVC Architecture + React Components** 🏗️  
 **Ready for Production** ✅  
 **Deployed on Vercel** 🚀
+
 
 
